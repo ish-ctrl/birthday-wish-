@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+  font-size: 1.5rem;
+  color: #101010;
+  margin-top: 1rem;
+}
+
+button {
+  margin-top: 2rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff6f61;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff3e34;
+}
+
+.hidden {
+  display: none;
+}
+
+.balloons {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 60px;
+  height: 80px;
+  background-color: #ffcccb;
+  border-radius: 50% 50% 45% 45%;
+  animation: float 7s linear infinite;
+}
+
+.balloon:before {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background: white;
+  transform: translateX(-50%);
+}
+
+.balloon:nth-child(odd) {
+  background-color: #ffd700;
+}
+
+.balloon:nth-child(even) {
+  background-color: #ff69b4;
+}
+
+.balloon:nth-child(1) {
+  left: 20%;
+  animation-delay: calc(var(--i) * 1s);
+}
+
+.balloon:nth-child(2) {
+  left: 40%;
+  animation-delay: calc(var(--i) * 1s);
+}
+
+.balloon:nth-child(3) {
+  left: 60%;
+  animation-delay: calc(var(--i) * 1s);
+}
+
+.balloon:nth-child(4) {
+  left: 80%;
+  animation-delay: calc(var(--i) * 1s);
+}
+
+.balloon:nth-child(5) {
+  left: 50%;
+  animation-delay: calc(var(--i) * 1s);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-110vh);
+  }
+}
